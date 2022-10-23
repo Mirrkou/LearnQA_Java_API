@@ -1,5 +1,6 @@
 package Ex14.lib;
 
+import com.github.javafaker.Faker;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +9,12 @@ public class DataGenerator {
     public static String getRandomEmail() {
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
         return "learnqa" + timestamp + "@examle.com";
+    }
+
+    public static String getRandomUsername() {
+        Faker faker = new Faker();
+        String username = faker.number().digits(250);
+        return "username" + username;
     }
 
     public static Map<String, String> getRegistrationData() {
