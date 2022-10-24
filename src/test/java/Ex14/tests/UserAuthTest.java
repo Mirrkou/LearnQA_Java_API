@@ -1,6 +1,13 @@
 package Ex14.tests;
 
 import Ex14.lib.BaseTestCase;
+import io.qameta.allure.Flaky;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -41,6 +48,14 @@ public class UserAuthTest extends BaseTestCase {
     }
 
     @Test
+    @Flaky
+    @Owner("Ivanov")
+    @Severity(SeverityLevel.BLOCKER)
+    @Epic("Авторизация на сайте")
+    @Feature("Авторизация через креды юзера")
+    @Story("Успешная авторизация")
+    @Issue("TLS-111")
+    @Link(name = "Ссылка", url = "https://playground.learnqa.ru")
     @Description("Thi test successfully authorize user by email and password")
     @DisplayName("Test positive auth user")
     public void testAuthUser() {
